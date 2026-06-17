@@ -22,6 +22,10 @@ unit:
 	$(C_COMPILER) $(CFLAGS) $(INC_DIRS) $(SYMBOLS) $(SRC_FILES) -o $(TEST_TARGET)
 	- ./$(TEST_TARGET)
 
+tests: bowling
+	bin/bowling <testdata/input.txt >testdata/output.txt
+	diff testdata/expected.txt testdata/output.txt
+
 bowling: src/bowling.c src/main.c
 	mkdir -p bin
 	cc src/main.c src/bowling.c -o bin/bowling
