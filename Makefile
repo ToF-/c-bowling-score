@@ -22,7 +22,7 @@ unit:
 	$(C_COMPILER) $(CFLAGS) $(INC_DIRS) $(SYMBOLS) $(SRC_FILES) -o $(TEST_TARGET)
 	- ./$(TEST_TARGET)
 
-bowling: src/bowling.c
+bowling: src/bowling.c src/main.c
 	mkdir -p bin
 	cc src/main.c src/bowling.c -o bin/bowling
 
