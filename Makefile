@@ -15,7 +15,7 @@ SRC_FILES=src/bowling.c $(UNITY_ROOT)/src/unity.c $(UNITY_ROOT)/extras/memory/sr
 
 INC_DIRS=-Isrc -I$(UNITY_ROOT)/src -I$(UNITY_ROOT)/extras/fixture/src -I$(UNITY_ROOT)/extras/memory/src
 
-tests:
+unit:
 	mkdir -p test/runner
 	./gen_test_runner.awk test/bowling_tests.c >test/runner/test_runner.c
 	./gen_all_tests.awk test/bowling_tests.c >test/runner/all_tests.c
